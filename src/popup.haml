@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %meta{ charset: "UTF-8" }
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
+    %title Xアカウント切り替え
+    %link{ rel: "stylesheet", href: "styles.css" }
+  %body
+    %h2 アカウント管理
+    %input#account-name{ type: "text", placeholder: "アカウント名" }
+    %button#save-session 現在のアカウントを保存
+
+    %h3 アカウント一覧
+    #account-list
+
+    %h3 データ管理
+    %button#export-data エクスポート
+    %input#import-file{ type: "file", accept: ".json" }
+    %button#import-data インポート
+
+    %script{ src: "popup.js" }
