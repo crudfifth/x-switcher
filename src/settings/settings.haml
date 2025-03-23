@@ -1,0 +1,34 @@
+!!! 5
+%html
+  %head
+    %meta{ charset: "UTF-8" }
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
+    %title アカウント設定
+    %link{ rel: "stylesheet", href: "../styles.css" }
+    %script{ src: "https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js" }
+
+  %body.settings
+    %h2 アカウント設定
+
+    %table#account-table
+      %thead
+        %tr
+          %th.checkbox-col
+            %input#select-all{ type: "checkbox" }
+          %th アカウント名
+          %th タグ
+          %th メールアドレス
+          %th パスワード
+          %th メモ
+      %tbody
+
+    %div.actions
+      %button#edit-toggle 編集モード
+      %button#delete-selected-btn{ disabled: true } 削除
+
+    %div.actions
+      %button#export-data エクスポート
+      %input#import-file{ type: "file", accept: ".json" }
+      %button#import-data インポート
+
+    %script{ src: "settings.js" }

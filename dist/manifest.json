@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Xアカウント切り替え",
+  "version": "1.0",
+  "description": "Xアカウントを切り替えるための拡張機能",
+  "permissions": ["cookies", "storage", "tabs", "scripting"],
+  "host_permissions": ["https://x.com/*", "https://twitter.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [{
+    "matches": ["https://x.com/*"],
+    "js": ["content.js"],
+    "run_at": "document_end"
+  }],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "options_page": "settings.html"
+}

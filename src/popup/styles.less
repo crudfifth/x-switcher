@@ -1,0 +1,119 @@
+@primary-color: #1da1f2;
+@danger-color: #e74c3c;
+@border-radius: 5px;
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 10px;
+}
+
+// popup 専用（狭い）
+body.popup {
+  width: 280px;
+}
+
+// settings 専用（広い）
+body.settings {
+  width: auto;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2,
+h3 {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  margin: 6px 0;
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: @primary-color;
+  color: white;
+  border: none;
+  border-radius: @border-radius;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: darken(@primary-color, 10%);
+  }
+}
+
+button#delete-data,
+button#delete-selected-btn,
+button#delete-all {
+  background-color: @danger-color;
+
+  &:hover {
+    background-color: darken(@danger-color, 10%);
+  }
+}
+
+input[type="text"],
+input[type="file"] {
+  width: calc(100% - 16px);
+  padding: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: @border-radius;
+}
+
+#account-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.account-button {
+  background-color: #eee;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: @border-radius;
+  padding: 6px;
+  text-align: center;
+  font-weight: bold;
+
+  &:hover {
+    background-color: #ddd;
+  }
+}
+
+// 🔹 テーブルデザイン追加（settings画面用）
+table#account-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+
+  th,
+  td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 13px;
+  }
+
+  th {
+    background-color: #f0f0f0;
+    white-space: nowrap;
+  }
+
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
